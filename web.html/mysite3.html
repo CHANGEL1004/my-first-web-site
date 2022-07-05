@@ -3,21 +3,63 @@
 <head>
   <title>CHANGEL No.1 HTML</title>
   <meta charset="utf-8">
+  <script
+  src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+  var Links = {
+    setColor:function(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color = color;
+          i = i + 1;
+      }
+  }
+}
+   var Body = {
+     setColor:function (color){
+       document.querySelector('body').style.color = color;
+     },
+    SetBackgroundColor:function (color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
+  }
+   function nightDayhandler(self){
+     var target = document.querySelector('body');
+     if(self.value === 'night'){
+     Body.setBackgroundColor('black');
+     Body.setColor('white');
+     self.value = 'day';
+
+     Links.setColor('powderblue');
+     } else {
+       Body.setBackgroundColor('white');
+       Body.setColor('black');
+       self.value = 'night';
+
+       Links.setColor('blue');
+     }
+   }
+   </script>
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
 <h1><a href="index.html">WEB</a></h1>
-<div id="grid">
+<input id="night_day" type="button" value="night" onclick="
+ nightDayhandler(this);
+">
 <ol>
-  <li><a href="Mysite1.html" class="saw">HTML</a></li>
-  <li><a href="Mysite2.html" class="saw" id="active">CSS</a></li>
+  <li><a href="Mysite1.html">HTML</a></li>
+  <li><a href="Mysite2.html">CSS</a></li>
   <li><a href="Mysite3.html">JS</a></li>
-  </ol>
-  <div id="article">
-   <h2>JS</h2>
-  <p> JavaScript is a cross-platform, object-oriented scripting language developed by Netscape was first used in Netscape browsers. However, Netscape was working with European Computer Manufacturers Association (ECMA) to deliver a standardized, international programming language based on core JavaScript.
-</p>
-</div>
-</div>
+</ol>
+<h2>JS</h2>
+  <p> JavaScript is a cross-platform,
+    object-oriented scripting language developed by
+    Netscape was first used in Netscape browsers. However,
+     Netscape was working with European Computer Manufacturers
+     Association (ECMA) to deliver a standardized,
+     international programming language based on core
+     JavaScript.
+ </p>
   </body>
   </htlm>
